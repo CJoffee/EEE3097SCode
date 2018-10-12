@@ -1,0 +1,23 @@
+default:
+	python Encoder.py
+	python Sender.py
+
+compile:
+	javac -cp jars/jfugue.jar MusicPlayer.java
+
+serveron:
+	python ReceiverT.py&
+	python ReceiverR.py&	
+
+decode:
+	python Decoder.py
+
+play:
+	java -cp .:./jars/jfugue.jar MusicPlayer
+
+validate:
+	python Validator.py
+
+clean:
+	rm ByteT ByteR BinaryT BinaryR *.class
+
